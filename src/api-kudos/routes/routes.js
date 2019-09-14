@@ -12,5 +12,11 @@ module.exports = function(app) {
     .post(mongodb.add_kudos);       
     
   app.route('/api/kudos/del/:id')
-    .delete(mongodb.del_kudos);       
+    .delete(mongodb.del_kudos);  
+  
+  app.route('/api-kudos-docs.json')
+    .get((req, res) => {
+          res.setHeader('Content-Type', 'application/json');
+          res.sendFile(__dirname + '/api-kudos-docs.json');
+    });           
 };

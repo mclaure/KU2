@@ -64,7 +64,7 @@ exports.add_user = (req, res, next) => {
         if (error) 
             return res.status(500).send(error);
         else 
-            return res.json({inserted:true});
+            return res.json({created:true});
     });    
 };
 
@@ -74,29 +74,29 @@ exports.del_user = (req, res, next) => {
                
     let params = [req.params.id];
     const id = parseInt(req.params.id, 10);
-    var message =  JSON.stringify({operation: "delete", idRemitente: id});
+    var message = JSON.stringify({operation: "delete", idDestinatario: id});
 
     mysqlConn.query(sql, params, function (error, rows, fields) {
         if (error) 
             return res.status(500).send(error);
         else {
             rmq.sendMessage(message);
-            return res.json({deleted:true});
+            return res.json({ deleted: true });
         }
     });    
 };
 
 exports.update_kudos = (req, res, next) => {
     let sql = "UPDATE user\
-               SET kudosQTY = (kudosQTY + 1) \
+               SET kudosQTY = ? \
                WHERE id = ?;";
                
-    let params = [req.params.id];
+    let params = [req.params.totalKudos, req.params.id];
 
     mysqlConn.query(sql, params, function (error, rows, fields) {
         if (error) 
             return res.status(500).send(error);
         else 
-            return res.json({kudosUpdated:true});
+            return res.json({ kudosUpdated: true });
     });    
 };

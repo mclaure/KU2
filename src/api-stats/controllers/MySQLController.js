@@ -2,17 +2,17 @@
 
 var mysqlConn = require("../config/MySQLdatabase");
 
-exports.updateUserKudos = (id, operation) => {
-    let sql = "UPDATE user\
-               SET kudosQTY = (kudosQTY " + operation + " 1) \
+exports.updateUserKudos = (id, total) => {
+    let sql = "UPDATE user      \
+               SET kudosQTY = ? \
                WHERE id = ?;";
                
-    let params = [id];
+    let params = [total, id];
 
     mysqlConn.query(sql, params, function (error, rows, fields) {
         if (error) 
             return console.log(err);
         else 
-            return console.log(" [x] kudosQTY updated for id: %d", id);
+            return console.log(" [x] kudosQTY updated for User [%d]", id);
     });    
 };

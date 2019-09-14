@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const kudosSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    id: Number,
     idRemitente: Number,
     idDestinatario: Number,   
     fecha: Date,

@@ -17,9 +17,15 @@ module.exports = function(app) {
   app.route('/api/users/add')
     .post(mysqldb.add_user);
 
-  app.route('/api/users/update/kudos/:id')
+  app.route('/api/users/update/kudos/:id/:totalKudos')
     .put(mysqldb.update_kudos);
 
   app.route('/api/users/del/:id')
-    .delete(mysqldb.del_user);       
+    .delete(mysqldb.del_user);   
+  
+  app.route('/api-users-docs.json')
+    .get((req, res) => {
+          res.setHeader('Content-Type', 'application/json');
+          res.sendFile(__dirname + '/api-users-docs.json');
+    });          
 };

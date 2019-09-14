@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mclaure/api-crud.git"
+    "url": "git+https://github.com/mclaure/api-stats.git"
   },
   "keywords": [
     "API",
@@ -20,9 +20,9 @@
   "author": "Marcelo Claure",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mclaure/api-crud/issues"
+    "url": "https://github.com/mclaure/api-stats/issues"
   },
-  "homepage": "https://github.com/mclaure/api-crud#readme",
+  "homepage": "https://github.com/mclaure/api-stats#readme",
   "dependencies": {
     "@types/node": "^12.7.3",
     "body-parser": "^1.19.0",

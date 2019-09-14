@@ -6,10 +6,10 @@ const mongoose = require("mongoose");
 
 exports.deleteAllKudos = (id) => {
                
-    Kudos.deleteMany({idRemitente: id})
+    Kudos.deleteMany({idDestinatario: id})
         .exec()
         .then(docs => {
-            console.log(" [x] Kudos from id: %d where deleted", id);
+            console.log(" [x] Kudos from User [%d] where deleted", id);
         })
         .catch(err => {
             console.log(err);

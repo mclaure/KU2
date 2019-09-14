@@ -39,19 +39,17 @@ module.exports.startReceivingMessages = () => {
 
                                     if(key == rmqSettings.users)
                                     {
-                                        //A users action happened we need to update users data then
+                                        //A users action happened we need to kudos data then
                                         if(info.operation === 'delete')
-                                            kudos.deleteAllKudos(info.idRemitente);
+                                            kudos.deleteAllKudos(info.idDestinatario);
                                         else
                                             console.log(' [!] kudos => not supported operation');
                                     }
                                     else if (key == rmqSettings.kudos)
                                     {
                                         //A kudos action happened we need to update users data then
-                                        if(info.operation === 'add')
-                                            users.updateUserKudos(info.idRemitente,'+');
-                                        else if(info.operation === 'delete')
-                                            users.updateUserKudos(info.idRemitente,'-');
+                                        if(info.operation === 'add' || info.operation === 'delete')
+                                            users.updateUserKudos(info.idDestinatario, info.newTotalKudos);
                                         else
                                             console.log(' [!] users => not supported operation');
                                     }
