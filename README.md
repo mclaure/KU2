@@ -11,16 +11,21 @@ API solution that handles NoSQL and SQL requests
 ```
     npm install
 ```
-3. Run the following commnad to start the node server 
+3. Run the following commnad on each folder to start each API service
  
    default ports
- *  api-docs:7070
- *  api-kudos:8000
- *  api-stats:7000
- *  api-users:9000:
+ *  api-docs  : 7070
+ *  api-kudos : 8000
+ *  api-stats : 7000
+ *  api-users : 9000:
 ```
     node server.js
 ```
+
+4. Go to a web browser and run http://localshot:7070
+
+![swagger-example](https://user-images.githubusercontent.com/24611413/64903770-d3e0c780-d68c-11e9-86be-f4ab473729a8.jpg)
+
 ---
 ## Available APIs
 
