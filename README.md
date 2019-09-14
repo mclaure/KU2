@@ -24,6 +24,8 @@ API solution that handles NoSQL and SQL requests
 ---
 ## Available APIs
 
+![api-kudos](https://user-images.githubusercontent.com/24611413/64903690-89128000-d68b-11e9-89fc-a7ebb70f1e8a.jpg)
+![api-users](https://user-images.githubusercontent.com/24611413/64903695-a0516d80-d68b-11e9-809c-7b8a393bc5c9.jpg)
 ---
 ## Author
 
